@@ -1,13 +1,126 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning app</title>
-    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-</head>
-<body>
-    Hi there!
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Studium - Изучение английского{% endblock %}
+
+{% block content %}
+<section class="relative min-h-screen py-20 sm:py-32 overflow-hidden flex items-center bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 animate-fade-in">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-sm font-medium">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <span>Учись когда и где угодно</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black leading-tight text-white">
+                        Изучай английский
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                            бесплатно
+                        </span>
+                    </h1>
+                </div>
+                <p class="text-xl text-slate-300 leading-relaxed max-w-md">
+                    Сервис для качественного изучения языка.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="/" class="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 btn-learn">
+                        <i class="fas fa-play-circle mr-3 icon text-lg"></i>
+                        <span>Хочу учиться</span>
+                    </a>
+                    <a href="#features" class="group inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-slate-600 hover:border-blue-400 text-white font-bold transition-all duration-300 hover:bg-slate-800/50 backdrop-blur">
+                        <i class="fas fa-arrow-down mr-3"></i>
+                        <span>Узнать больше</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block animate-float">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    
+                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8 space-y-6 hover:border-slate-600/80 transition-all duration-300 shadow-2xl hover:shadow-blue-500/10 hover:shadow-2xl group">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-3xl font-bold text-white flex items-center gap-3">
+                                <i class="fas fa-zap text-yellow-400 text-4xl"></i>
+                                <span>Новый урок</span>
+                            </h3>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold">NEW</span>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-5 rounded-xl bg-slate-700/30">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-xl">
+                                📚
+                            </div>
+                            <div class="flex-grow">
+                                <div class="text-white font-bold text-base">Урок 1 - Приветствие</div>
+                                <div class="text-slate-400 text-sm mt-2">Изучи базовые фразы приветствия на английском языке и научись представляться</div>
+                            </div>
+                        </div>
+                        
+                        <a href="/" class="block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg text-center hover:from-blue-500 hover:to-purple-500 transition-all duration-200 transform hover:scale-105">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Начать урок
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-20 sm:py-32 border-t border-slate-700/30 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+                Всё для <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">эффективного</span> обучения
+            </h2>
+            <p class="text-lg text-slate-400">Инструменты для роста, и результата</p>
+        </div>
+         
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+             <article class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-cyan-500/10 transform hover:scale-105 hover:-translate-y-2">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center mb-4 text-2xl text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Бесплатное обучение</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Полный доступ ко всем материалам. Без подписок и ограничений.</p>
+            </article>
+            <article class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-blue-500/10 transform hover:scale-105 hover:-translate-y-2">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 text-2xl text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Короткие уроки</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Структурированные уроки по 10–15 минут, легко вписываются в расписание и не требуют больших затрат времени</p>
+            </article>
+            <article class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-green-500/50 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-green-500/10 transform hover:scale-105 hover:-translate-y-2">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4 text-2xl text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Словарный запас</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Интерактивные карточки с повторением по интервальному методу для надёжного закрепления слов</p>
+            </article>
+            <article class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-purple-500/10 transform hover:scale-105 hover:-translate-y-2">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-4 text-2xl text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Интерактивные тесты</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Проверяйте знания с моментальной обратной связью и детальным разбором ошибок</p>
+            </article>
+            <article class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-orange-500/10 transform hover:scale-105 hover:-translate-y-2">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center mb-4 text-2xl text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Отслеживание прогресса</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Следите за достижениями, статистикой обучения и визуализируйте ваш прогресс</p>
+            </article>
+            <article class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-cyan-500/10 transform hover:scale-105 hover:-translate-y-2">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-sky-500 flex items-center justify-center mb-4 text-2xl text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i class="fas fa-life-ring"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Поддержка</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Техническая и учебная поддержка</p>
+            </article>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
