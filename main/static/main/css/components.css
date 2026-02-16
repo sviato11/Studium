@@ -1,0 +1,69 @@
+@layer components {
+    .site-container {
+        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    a,
+    button {
+        @apply transition-colors duration-200;
+    }
+}
+
+.btn-learn {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-learn .icon {
+    transition: transform 0.18s ease;
+}
+
+.btn-learn:hover .icon {
+    transform: rotate(12deg) translateX(3px);
+}
+
+.btn-learn:before {
+    content: "";
+    position: absolute;
+    left: -40%;
+    top: -40%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 30%);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.35s ease;
+    transform: translateY(8px) scale(0.95);
+}
+
+.btn-learn:hover:before {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.btn-learn.active {
+    transform: translateY(-3px) scale(1.01);
+}
+
+.lesson-item {
+    transition: background-color 0.15s ease, transform 0.12s ease;
+}
+
+.lesson-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+    transform: translateX(4px);
+}
+
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-hover:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+}
